@@ -1,6 +1,8 @@
 package de.hama.edvstraf.aktiehq.app;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
+import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.util.Log;
@@ -72,8 +74,24 @@ public class AktienlisteFragment extends Fragment {
         if (id == R.id.action_daten_aktualisieren) {
 
             // Erzeugen einer Instanz von HoleDatenTask und starten des asynchronen Tasks
-            HoleDatenTask holeDatenTask = new HoleDatenTask();
-            holeDatenTask.execute("Aktie");
+            HoleDatenTask hohleDatenTask = new HoleDatenTask();
+            //holeDatenTask.execute("Aktie");
+
+            //Auslesen der ausgewählten Aktienliste aus den SharedPreferences
+            SharedPreferences sPrefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
+            String aktienliste = sPrefs.getString(getString(R.string.preference_aktienliste_key), getString(R.string.preference_aktienliste_default));
+            String indizeliste = sPrefs.getString(getString(R.string.preference_indizeliste_key), getString(R.string.preference_indizeliste_default));
+
+            //Auslesen des Anzeigemodus aus den SharedPreferences
+            Boolean inzdizemodus = sPrefs.getBoolean(getString(R.string.preference_indizemodus_key), false);
+
+            //Starten des asynchronen Tasks und Übergabe der Aktienliste
+            if(inzdizemodus){
+                hohleDatenTask.execute(indizeliste);
+            }
+            else {
+                hohleDatenTask.execute(aktienliste);
+            }
 
             // Den Benutzer informieren, dass neue Aktiendaten im Hintergrund abgefragt werden
             Toast.makeText(getActivity(), "Aktiendaten werden abgefragt!",
@@ -162,7 +180,7 @@ public class AktienlisteFragment extends Fragment {
             final String DOWNLOAD_URL = "http://download.finance.yahoo.com/d/quotes.csv";
             final String DIAGNOSTICS = "'&diagnostics=true";
 
-            String symbols = "BMW.DE,DAI.DE,^GDAXI";
+            String symbols = strings[0];
             symbols = symbols.replace("^", "%255E");
             String parameters = "snc4xl1d1t1c1p2ohgv";
             String columns = "symbol,name,currency,exchange,price,date,time," +

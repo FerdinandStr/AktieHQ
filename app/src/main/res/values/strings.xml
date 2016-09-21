@@ -6,4 +6,18 @@
     <string name="action_daten_aktualisieren">Aktualisieren</string>
 
     <string name="title_activity_aktiendetail">Aktiendetail</string>
-</resources>
+
+    <string name ="title_activity_einstellungen">Einstellungen</string>
+
+     <string name ="preference_aktienliste_title">Liste der Finanzinstrumente</string>
+     <string name ="preference_aktienliste_key">aktienliste</string>
+      <string name ="preference_aktienliste_default">BMW.DE,DAI.DE,VOW3.DE,SAP.DE,^GDAXI</string>
+
+    <string name ="preference_indizeliste_title">Liste der Indizes</string>
+    <string name ="preference_indizeliste_key">indizeliste</string>
+    <string name ="preference_indizeliste_default">^GDAXI,^TECDAX,^MDAXI,^SDAXI,^GSPC,^N225,^HSI,XAGUSD=X,XAUUSD=X</string>
+
+    <string name ="preference_indizemodus_title">Indizes-Modus</string>
+    <string name ="preference_indizemodus_key">indizemodus</string>
+    <string name ="preference_indizemodus_summary">Eine Indizeliste wird anstelle der Aktienliste angezeigt.</string>
+    </resources>
