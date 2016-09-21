@@ -2,10 +2,11 @@
 #                                                              #
 #    Übungsprojekt zum Lernen der Entwicklung von Apps         #
 #                       auf Android Basis                      #
+#  Credits and tutorial: http://www.programmierenlernenhq.de/  #
 #                          20.09.2016                          #
 #                            ++++++                            #
 #                                                              #
-#    Anzeigen einer Aktienliste mit aktuellen Daten            #
-#    von Yahoo Finance.                                        #
+#    Anzeigen von Finanzinformationen über Aktien, Indizes     #
+#    und mehr mit live Daten von Yahoo Finance.                #
 #                                                              #
 ########################## ¯\_(ツ)_/¯ ##########################
