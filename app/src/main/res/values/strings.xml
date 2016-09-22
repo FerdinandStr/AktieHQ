@@ -2,6 +2,7 @@
     <string name="app_name">AktieHQ</string>
     <string name="hello_world">Hallo ProgrammierenLernenHQ World!</string>
     <string name="action_settings">Settings</string>
+    <string name ="action_starte_browser">Mehr Info anzeigen</string>
 
     <string name="action_daten_aktualisieren">Aktualisieren</string>
 
@@ -20,4 +21,6 @@
     <string name ="preference_indizemodus_title">Indizes-Modus</string>
     <string name ="preference_indizemodus_key">indizemodus</string>
     <string name ="preference_indizemodus_summary">Eine Indizeliste wird anstelle der Aktienliste angezeigt.</string>
+
+
     </resources>
